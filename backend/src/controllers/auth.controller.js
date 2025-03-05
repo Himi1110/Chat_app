@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 
 export const signup = async (req, res) => {
-  const { fullNanme, email, password } = req.body;
+  const { fullName, email, password } = req.body;
   try {
     if (password.length < 6) {
       return res
@@ -22,6 +22,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
+      
     } else {
       res.status(400).json({ message: "Invalid user data" });
     }
